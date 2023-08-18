@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/f-icons.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="main-login">
+        <div class="login-contain">
+            <div class="left-side">
+                <h1 class="heading-login">ĐĂNG NHẬP</h1>
+                <form action="" method="POST" class="login-form" id="form-1">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="Nhập email" />
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu</label>
+                        <input id="password" type="password" placeholder="Nhập mật khẩu" />
+                        <span class="form-message"></span>
+                    </div>
+                    <button type="button" id="btn-login" onclick="login()">Đăng nhập</button>
+                </form>      
+                
+                <p class="move-signup">Chưa có tài khoản? <a href="signup.html">Đăng ký</a></p>
+                                
+            </div> 
+            <div class="right-side">
+                <img class="img-login" src="img/Tshirt.png" alt="Background Login"/>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/validator.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#email'),
+                Validator.minLength('#password', 8),
+            ],
+
+        });
+    </script>
+
+    <script>
+        // Kiểm tra thông tin đăng nhập và chuyển hướng đến trang tương ứng
+        function login() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Kiểm tra nếu là admin
+            if (email === "admin123@gmail.com" && password === "admin1234") {
+                alert("Đăng nhập thành công với vai trò admin!");
+                window.location.href = "admin.html";
+            } else {
+                var user = JSON.parse(localStorage.getItem("user"));
+
+                if (user && email === user.email && password === user.password) {
+                    alert("Đăng nhập thành công!");
+                    window.location.href = "index.html";
+                } else {
+                    alert("Email hoặc mật khẩu không chính xác.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

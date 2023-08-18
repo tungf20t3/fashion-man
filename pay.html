@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay</title>
+    <link rel="icon" href="img/f-icons.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="pay-header">
+        <img src="img/logo.png" alt="logo">
+        <h3>Thanh toán</h3>
+    </div>
+
+    <div class="address section-p2">
+        <div class="title-address">
+            <i class="ri-map-pin-fill"></i> 
+            <span>Địa Chỉ Nhận Hàng</span>
+        </div>
+        <div class="info-address">
+            <span><b>Văn Tùng (+84) 399291315</b></span>
+            <span class="address-text">94 Nguyễn Công Trứ, Phường An Hải Tây, Quận Sơn Trà, Đà Nẵng</span>
+            <a href="">Thay đổi</a>
+        </div>
+    </div>
+
+    <div id="cart" class="section-p2 cart-content pay-product">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Hình ảnh</td>
+                    <td>Sản phẩm</td>
+                    <td>Giá</td>
+                    <td>Số lượng</td>
+                    <td>Thành tiền</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="cart-img"><img src="img/products/f1.jpg" alt=""></td>
+                    <td class="cart-title">Cartoon Astronaut T-shirts</td>
+                    <td class="cart-price">500000 VNĐ</td>
+                    <td>1</td>
+                    <td class="cart-price">500000 VNĐ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="payment-methods section-p2">
+        <div class="option-payments">
+            <span>Phương thức thanh toán</span>
+            <button class="btn-option-payments">Thanh toán khi nhận hàng</button>
+            <button class="btn-option-payments">Chuyển khoản ngân hàng</button>
+        </div>
+        <hr>
+        <div class="pay">
+            <div class="total-product pay-row">
+                <span class="pay-row-title">Tổng tiền hàng:</span>
+                <span>500.000 VNĐ</span>
+            </div>
+            <div class="total-product pay-row">
+                <span class="pay-row-title">Phí vận chuyển:</span>
+                <span>30.000 VNĐ</span>
+            </div>
+            <div class="total-product pay-row">
+                <span class="pay-row-title">Tổng thanh toán:</span>
+                <span style="font-size: 20px;"><b>530.000 VNĐ</b></span>
+            </div>
+            <button class="dat-hang">Đặt hàng</button>
+        </div>
+    </div>
+
+    <footer class="section-p1">
+        <div class="col">
+            <!-- <img src="img/logo.png" alt="" class="logo"> -->
+            <h4>Liên hệ</h4>
+            <p><strong>Địa chỉ: </strong>94 Nguyễn Công Trứ, Quận Sơn Trà, TP Đà Nẵng</p>
+            <p><strong>Điện thoại: </strong>039 929 1315</p>
+            <p><strong>Mở cửa: </strong>8:00 - 18:00, Thứ 2 - Chủ nhật</p>
+            <div class="follow">
+                <h4>Theo dõi chúng tôi trên</h4>
+                <div class="sociable">
+                    <i class="ri-facebook-circle-fill"></i>
+                    <i class="ri-instagram-fill"></i>
+                    <i class="ri-youtube-fill"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>Về chúng tôi</h4>
+            <a href="#">Thông tin giao hàng</a>
+            <a href="#">Chính sách bảo mật</a>
+            <a href="#">Chính hãng</a>
+            <a href="#">Điều khoản và điều kiện</a>
+            <a href="#">Liên hệ với truyền thông</a>
+        </div>
+
+        <div class="col">
+            <h4>Chăm sóc khách hàng</h4>
+            <a href="#">Trung tâm trợ giúp</a>
+            <a href="#">Hướng dẫn mua hàng</a>
+            <a href="#">Vận chuyển</a>
+            <a href="#">Thanh toán</a>
+            <a href="#">Chính sách bảo hành</a>
+        </div>
+
+        <div class="col install">
+            <h4>Cài đặt ứng dụng</h4>
+            <p>Từ App Store hoặc Google Play</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Thanh toán</p>
+            <img src="img/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>© 2023 by Van Tung - Clothing Store</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var button = document.querySelector(".dat-hang");
+            button.addEventListener("click", function() {
+                alert("Đặt hàng thành công");
+                // window.location.href = "index.html";
+            });
+        });
+    </script>
+</body>
+</html>

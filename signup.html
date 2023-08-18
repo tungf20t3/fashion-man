@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/f-icons.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="main-login">
+        <div class="login-contain">
+            <div class="left-side">
+                <h1 class="heading-login">Đăng ký</h1>
+                <form action="" method="POST" class="login-form" id="form-1">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input id="username" type="text" placeholder="Nhập username" />
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="Nhập email" />
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu</label>
+                        <input id="password" type="password" placeholder="Nhập mật khẩu" />
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password-confirmation">Nhập lại mật khẩu</label>
+                        <input id="password-confirmation" type="password" placeholder="Nhập lại mật khẩu" />
+                        <span class="form-message"></span> 
+                    </div> 
+                    <button type="button" id="btn-login" onclick="saveRegistration()">Đăng ký</button>
+                </form>      
+                
+                <p class="move-signup">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+                                
+            </div> 
+            <div class="right-side">
+                <img class="img-login" src="img/jacket.png" alt="Background Login"/>
+            </div>
+        </div>
+    </div>
+    <script src="./js/validator.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#username'),
+                Validator.isEmail('#email'),
+                Validator.minLength('#password', 8),
+            ],
+
+        });
+    </script>
+    <script>
+        // Lưu thông tin đăng ký vào Local Storage
+        function saveRegistration() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var user = {
+                username: username,
+                email: email,
+                password: password
+            };
+
+            localStorage.setItem("user", JSON.stringify(user));
+
+            alert("Đăng ký thành công!");
+            document.getElementById("form-1").reset();
+        }
+    </script>
+</body>
+</html>
